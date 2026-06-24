@@ -13,12 +13,19 @@
       font-family: Arial, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: #fffaf0;
       color: #3b2a1a;
     }
 
     header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
       background: #8b4513;
       color: white;
       padding: 18px 8%;
@@ -38,9 +45,15 @@
       font-weight: bold;
     }
 
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
     .hero {
-      min-height: 85vh;
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      min-height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.50)),
       url("https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b") center/cover;
       display: flex;
       align-items: center;
@@ -49,11 +62,12 @@
     }
 
     .hero-content {
-      max-width: 600px;
+      max-width: 650px;
+      animation: fadeUp 1.2s ease;
     }
 
     .hero h1 {
-      font-size: 52px;
+      font-size: 54px;
       margin-bottom: 20px;
     }
 
@@ -67,10 +81,17 @@
       background: #f4b400;
       color: #3b2a1a;
       padding: 14px 28px;
+      border: none;
       text-decoration: none;
       border-radius: 30px;
       font-weight: bold;
       display: inline-block;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #ffcc33;
+      transform: scale(1.05);
     }
 
     section {
@@ -87,12 +108,6 @@
     .chakki-animation {
       background: #fff3d6;
       text-align: center;
-    }
-
-    .chakki-animation h2 {
-      color: #8b4513;
-      font-size: 34px;
-      margin-bottom: 50px;
     }
 
     .chakki {
@@ -133,7 +148,6 @@
       border-radius: 50%;
       top: 85px;
       left: 85px;
-      box-shadow: inset 0 5px 10px rgba(0,0,0,0.5);
     }
 
     .handle {
@@ -191,49 +205,6 @@
       box-shadow: 0 0 18px rgba(246,232,200,0.8);
     }
 
-    @keyframes rotateChakki {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes rotateHandle {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes dropWheat {
-      0% {
-        opacity: 0;
-        transform: translateY(0) scale(0.8);
-      }
-      40% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(115px) scale(0.5);
-      }
-    }
-
-    @keyframes flourPulse {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 0.8;
-      }
-      50% {
-        transform: scale(1.15);
-        opacity: 1;
-      }
-    }
-
     .about {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -267,11 +238,46 @@
       text-align: center;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
     }
 
     .card h3 {
       color: #8b4513;
       margin-bottom: 15px;
+    }
+
+    .calculator {
+      background: white;
+      text-align: center;
+    }
+
+    .calc-box {
+      max-width: 420px;
+      margin: auto;
+      background: #fff3d6;
+      padding: 30px;
+      border-radius: 18px;
+    }
+
+    .calc-box input,
+    .calc-box select {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #d4a75c;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .result {
+      margin-top: 18px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #8b4513;
     }
 
     .why ul {
@@ -287,14 +293,19 @@
       text-align: center;
     }
 
-    .contact h2 {
-      font-size: 34px;
-      margin-bottom: 20px;
+    .contact form {
+      max-width: 500px;
+      margin: 25px auto 0;
     }
 
-    .contact p {
-      font-size: 18px;
-      margin-bottom: 10px;
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
     }
 
     footer {
@@ -304,15 +315,84 @@
       padding: 15px;
     }
 
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25d366;
+      color: white;
+      padding: 15px 18px;
+      border-radius: 50%;
+      font-size: 26px;
+      text-decoration: none;
+      z-index: 999;
+    }
+
+    @keyframes rotateChakki {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes rotateHandle {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes dropWheat {
+      0% { opacity: 0; transform: translateY(0) scale(0.8); }
+      40% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(115px) scale(0.5); }
+    }
+
+    @keyframes flourPulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hidden {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @media (max-width: 768px) {
       header {
-        flex-direction: column;
-        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+        margin-top: 15px;
+      }
+
+      nav.active {
+        display: block;
       }
 
       nav a {
-        margin: 8px;
-        display: inline-block;
+        display: block;
+        margin: 12px 0;
       }
 
       .hero h1 {
@@ -334,43 +414,41 @@
 
   <header>
     <h2>Fresh Atta Chakki</h2>
-    <nav>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <nav id="navMenu">
       <a href="#home">Home</a>
       <a href="#chakki">Chakki</a>
       <a href="#about">About</a>
       <a href="#services">Products</a>
+      <a href="#calculator">Price</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero" id="home">
     <div class="hero-content">
-      <h1>Fresh Chakki Atta For Every Home 2</h1>
+      <h1>Fresh Chakki Atta For Every Home</h1>
       <p>Pure, healthy and freshly ground wheat flour made with care for soft rotis and healthy family meals.</p>
       <a href="#contact" class="btn">Order Now</a>
     </div>
   </section>
 
-  <section class="chakki-animation" id="chakki">
-    <h2>Freshly Ground With Traditional Chakki</h2>
+  <section class="chakki-animation hidden" id="chakki">
+    <h2 class="title">Freshly Ground With Traditional Chakki</h2>
 
     <div class="chakki">
       <div class="stone top-stone">
         <div class="hole"></div>
       </div>
-
       <div class="stone bottom-stone"></div>
-
       <div class="handle"></div>
-
       <div class="wheat wheat1">🌾</div>
       <div class="wheat wheat2">🌾</div>
-
       <div class="flour"></div>
     </div>
   </section>
 
-  <section id="about">
+  <section id="about" class="hidden">
     <h2 class="title">About Our Atta Chakki</h2>
     <div class="about">
       <div>
@@ -383,28 +461,46 @@
     </div>
   </section>
 
-  <section class="services" id="services">
+  <section class="services hidden" id="services">
     <h2 class="title">Our Products</h2>
 
     <div class="cards">
       <div class="card">
         <h3>Fresh Wheat Atta</h3>
-        <p>Stone-ground fresh atta for soft and healthy rotis.</p>
+        <p>₹45 / kg</p>
       </div>
 
       <div class="card">
         <h3>Multigrain Atta</h3>
-        <p>A healthy mix of grains for better nutrition.</p>
+        <p>₹65 / kg</p>
       </div>
 
       <div class="card">
         <h3>Custom Grinding</h3>
-        <p>Bring your own grains and get them freshly ground.</p>
+        <p>₹10 / kg grinding charge</p>
       </div>
     </div>
   </section>
 
-  <section class="why">
+  <section class="calculator hidden" id="calculator">
+    <h2 class="title">Calculate Your Order</h2>
+
+    <div class="calc-box">
+      <select id="product">
+        <option value="45">Fresh Wheat Atta - ₹45/kg</option>
+        <option value="65">Multigrain Atta - ₹65/kg</option>
+        <option value="10">Custom Grinding - ₹10/kg</option>
+      </select>
+
+      <input type="number" id="kg" placeholder="Enter quantity in KG" />
+
+      <button class="btn" onclick="calculatePrice()">Calculate Price</button>
+
+      <div class="result" id="result">Total: ₹0</div>
+    </div>
+  </section>
+
+  <section class="why hidden">
     <h2 class="title">Why Choose Us?</h2>
     <ul>
       <li>Freshly ground atta every day</li>
@@ -415,18 +511,74 @@
     </ul>
   </section>
 
-  <section class="contact" id="contact">
+  <section class="contact hidden" id="contact">
     <h2>Contact Us</h2>
     <p><strong>Phone:</strong> +91 98765 43210</p>
     <p><strong>Email:</strong> info@freshattachakki.com</p>
     <p><strong>Address:</strong> Your Shop Address, Your City</p>
-    <br>
-    <a href="tel:+919876543210" class="btn">Call Now</a>
+
+    <form onsubmit="sendMessage(event)">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="tel" id="phone" placeholder="Your Phone Number" required />
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Enquiry</button>
+    </form>
   </section>
 
   <footer>
     <p>© 2026 Fresh Atta Chakki. All Rights Reserved.</p>
   </footer>
+
+  <a class="whatsapp" href="https://wa.me/919876543210" target="_blank">✆</a>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("active");
+    }
+
+    function calculatePrice() {
+      let price = document.getElementById("product").value;
+      let kg = document.getElementById("kg").value;
+
+      if (kg <= 0 || kg === "") {
+        document.getElementById("result").innerText = "Please enter valid KG";
+        return;
+      }
+
+      let total = price * kg;
+      document.getElementById("result").innerText = "Total: ₹" + total;
+    }
+
+    function sendMessage(event) {
+      event.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let message = document.getElementById("message").value;
+
+      let whatsappNumber = "919876543210";
+
+      let text =
+        "Hello, I want to enquire about Atta Chakki.%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Phone: " + phone + "%0A" +
+        "Message: " + message;
+
+      window.open("https://wa.me/" + whatsappNumber + "?text=" + text, "_blank");
+    }
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
+
+    hiddenElements.forEach((el) => observer.observe(el));
+  </script>
 
 </body>
 </html>
