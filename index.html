@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Atta Chakki</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #fffaf0;
+      color: #3b2a1a;
+    }
+
+    header {
+      background: #8b4513;
+      color: white;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h2 {
+      font-size: 26px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-weight: bold;
+    }
+
+    .hero {
+      min-height: 85vh;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      url("https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b") center/cover;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .btn {
+      background: #f4b400;
+      color: #3b2a1a;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 45px;
+      color: #8b4513;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .about p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .services {
+      background: #fff3d6;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      color: #8b4513;
+      margin-bottom: 15px;
+    }
+
+    .why ul {
+      max-width: 750px;
+      margin: auto;
+      font-size: 19px;
+      line-height: 2;
+    }
+
+    .contact {
+      background: #8b4513;
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #3b2a1a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 8px;
+        display: inline-block;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>Fresh Atta Chakki</h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Fresh Chakki Atta For Every Home</h1>
+      <p>Pure, healthy and freshly ground wheat flour made with care for soft rotis and healthy family meals.</p>
+      <a href="#contact" class="btn">Order Now</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="title">About Our Atta Chakki</h2>
+    <div class="about">
+      <div>
+        <p>
+          We provide freshly ground atta made from high-quality wheat. Our traditional chakki grinding process keeps the natural taste, nutrition and freshness intact.
+          Perfect for soft rotis, parathas and everyday healthy meals.
+        </p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1604908177522-040f35c8196b" alt="Fresh Wheat Atta">
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2 class="title">Our Products</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Fresh Wheat Atta</h3>
+        <p>Stone-ground fresh atta for soft and healthy rotis.</p>
+      </div>
+
+      <div class="card">
+        <h3>Multigrain Atta</h3>
+        <p>A healthy mix of grains for better nutrition.</p>
+      </div>
+
+      <div class="card">
+        <h3>Custom Grinding</h3>
+        <p>Bring your own grains and get them freshly ground.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <h2 class="title">Why Choose Us?</h2>
+    <ul>
+      <li>Freshly ground atta every day</li>
+      <li>Pure and natural wheat flour</li>
+      <li>No added chemicals or preservatives</li>
+      <li>Hygienic grinding process</li>
+      <li>Home delivery available</li>
+    </ul>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Phone:</strong> +91 98765 43210</p>
+    <p><strong>Email:</strong> info@freshattachakki.com</p>
+    <p><strong>Address:</strong> Your Shop Address, Your City</p>
+    <br>
+    <a href="tel:+919876543210" class="btn">Call Now</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Fresh Atta Chakki. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
