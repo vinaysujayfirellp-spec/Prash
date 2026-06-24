@@ -84,6 +84,156 @@
       color: #8b4513;
     }
 
+    .chakki-animation {
+      background: #fff3d6;
+      text-align: center;
+    }
+
+    .chakki-animation h2 {
+      color: #8b4513;
+      font-size: 34px;
+      margin-bottom: 50px;
+    }
+
+    .chakki {
+      position: relative;
+      width: 280px;
+      height: 300px;
+      margin: auto;
+    }
+
+    .stone {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      left: 30px;
+      background: radial-gradient(circle, #e0cfa8, #9a8058);
+      box-shadow: inset 0 8px 20px rgba(0,0,0,0.25),
+                  0 12px 20px rgba(0,0,0,0.18);
+    }
+
+    .top-stone {
+      top: 0;
+      z-index: 3;
+      animation: rotateChakki 4s linear infinite;
+    }
+
+    .bottom-stone {
+      top: 38px;
+      z-index: 1;
+      background: radial-gradient(circle, #c8ae7b, #7b623f);
+    }
+
+    .hole {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: #5c3b1e;
+      border-radius: 50%;
+      top: 85px;
+      left: 85px;
+      box-shadow: inset 0 5px 10px rgba(0,0,0,0.5);
+    }
+
+    .handle {
+      position: absolute;
+      width: 95px;
+      height: 12px;
+      background: #5c3b1e;
+      border-radius: 10px;
+      top: 105px;
+      left: 150px;
+      z-index: 4;
+      transform-origin: -40px center;
+      animation: rotateHandle 4s linear infinite;
+    }
+
+    .handle::after {
+      content: "";
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      background: #3b2a1a;
+      border-radius: 50%;
+      right: -12px;
+      top: -8px;
+    }
+
+    .wheat {
+      position: absolute;
+      font-size: 28px;
+      z-index: 5;
+      animation: dropWheat 2.5s infinite;
+    }
+
+    .wheat1 {
+      top: -25px;
+      left: 110px;
+    }
+
+    .wheat2 {
+      top: -45px;
+      left: 145px;
+      animation-delay: 1s;
+    }
+
+    .flour {
+      position: absolute;
+      width: 130px;
+      height: 28px;
+      background: #f6e8c8;
+      border-radius: 50%;
+      bottom: 20px;
+      left: 75px;
+      z-index: 0;
+      animation: flourPulse 2s infinite;
+      box-shadow: 0 0 18px rgba(246,232,200,0.8);
+    }
+
+    @keyframes rotateChakki {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotateHandle {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dropWheat {
+      0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.8);
+      }
+      40% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(115px) scale(0.5);
+      }
+    }
+
+    @keyframes flourPulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.15);
+        opacity: 1;
+      }
+    }
+
     .about {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -186,6 +336,7 @@
     <h2>Fresh Atta Chakki</h2>
     <nav>
       <a href="#home">Home</a>
+      <a href="#chakki">Chakki</a>
       <a href="#about">About</a>
       <a href="#services">Products</a>
       <a href="#contact">Contact</a>
@@ -197,6 +348,25 @@
       <h1>Fresh Chakki Atta For Every Home</h1>
       <p>Pure, healthy and freshly ground wheat flour made with care for soft rotis and healthy family meals.</p>
       <a href="#contact" class="btn">Order Now</a>
+    </div>
+  </section>
+
+  <section class="chakki-animation" id="chakki">
+    <h2>Freshly Ground With Traditional Chakki</h2>
+
+    <div class="chakki">
+      <div class="stone top-stone">
+        <div class="hole"></div>
+      </div>
+
+      <div class="stone bottom-stone"></div>
+
+      <div class="handle"></div>
+
+      <div class="wheat wheat1">🌾</div>
+      <div class="wheat wheat2">🌾</div>
+
+      <div class="flour"></div>
     </div>
   </section>
 
@@ -215,6 +385,7 @@
 
   <section class="services" id="services">
     <h2 class="title">Our Products</h2>
+
     <div class="cards">
       <div class="card">
         <h3>Fresh Wheat Atta</h3>
