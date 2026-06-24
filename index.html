@@ -31,7 +31,76 @@
     html {
       scroll-behavior: smooth;
     }
+.reel-showcase {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(217, 164, 65, 0.16) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 70%, rgba(122, 31, 31, 0.10) 0 2px, transparent 3px),
+    var(--cream);
+  background-size: 42px 42px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
 
+.eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+
+.reel-text h2 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  color: var(--maroon);
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+
+.reel-text p {
+  color: #664936;
+  line-height: 1.8;
+  margin-bottom: 26px;
+  max-width: 520px;
+}
+
+.reel-video {
+  background: #fff7e8;
+  padding: 20px;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.reel-video .instagram-media {
+  margin: 0 auto !important;
+  max-width: 420px !important;
+  width: 100% !important;
+  min-width: 280px !important;
+  border-radius: 20px !important;
+}
+
+@media (max-width: 768px) {
+  .reel-showcase {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .reel-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .reel-video {
+    padding: 14px;
+  }
+}
     body {
       font-family: "Poppins", sans-serif;
       background: var(--cream);
@@ -972,7 +1041,27 @@
 
     <div class="hamburger" id="hamburger">☰</div>
   </header>
+<!-- INSTAGRAM REEL SHOWCASE -->
+<section class="reel-showcase reveal">
+  <div class="reel-text">
+    <span class="eyebrow">Fresh Prash Stories</span>
+    <h2>From Our Kitchen to Your Home</h2>
+    <p>
+      Discover the goodness, softness, and everyday family moments behind Fresh Prash Pure Sehore Sharbati Wheat Atta.
+    </p>
+    <a href="https://www.instagram.com/reel/DZOf67ryLR7/" target="_blank" class="btn">
+      Watch on Instagram
+    </a>
+  </div>
 
+  <div class="reel-video">
+    <blockquote 
+      class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/reel/DZOf67ryLR7/"
+      data-instgrm-version="14">
+    </blockquote>
+  </div>
+</section>
   <!-- HERO -->
   <section class="hero" id="home">
     <span class="particle"></span>
